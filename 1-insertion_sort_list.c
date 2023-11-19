@@ -1,6 +1,25 @@
 #include "sort.h"
 
 /**
+ * swap - swaps 2 nums
+ * @fn: first node param
+ * @sn: second node param
+ * Return: void, nadaaaaaa
+ */
+void swap(listint_t *fn, listint_t *sn)
+{
+	if (fn->prev)
+		fn->prev->next = sn;
+	if (sn->next)
+		sn->next->prev = fn;
+	fn->next = sn->next;
+	sn->prev = fn->prev;
+	fn->prev = sn;
+	sn->next = fn;
+
+}
+
+/**
  * insertion_sort_list - insertion sorting algorithm
  * @list: pointer addr param
  * Return: void, nadaaaaaaa:)
@@ -36,21 +55,4 @@ void insertion_sort_list(listint_t **list)
 }
 
 
-/**
- * swap - swaps 2 nums
- * @fn: first node param
- * @sn: second node param
- * Return: void, nadaaaaaa
- */
-void swap(listint_t *fn, listint_t *sn)
-{
-	if (fn->prev)
-		fn->prev->next = sn;
-	if (sn->next)
-		sn->next->prev = fn;
-	fn->next = sn->next;
-	sn->prev = fn->prev;
-	fn->prev = sn;
-	sn->next = fn;
 
-}
